@@ -1,0 +1,31 @@
+body {
+    background-color: lightblue;
+}
+* {
+    padding: 10px;
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+p {
+    font-size: 20px;
+}
+#para2 {
+    text-align: center;
+    color: gold;
+}
+#head1 {
+    text-align: center;
+    color: white;
+}
+.border {
+    border: 1px solid red;
+}
+.box {
+    width: 400px;
+    height: 400px;
+}
+h1, h2, p {
+    font-family: verdana;
+}
