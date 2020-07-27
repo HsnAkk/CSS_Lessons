@@ -1,0 +1,97 @@
+<!--
+CSS Margins:
+------------
+The CSS margin properties are used to create space around elements, outside of any defined borders.
+
+With CSS, you have full control over the margins. 
+There are properties for setting the margin for each side of an element (top, right, bottom, and left).
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Margin</title>
+        <style>
+           .box1 {
+                border: 1px solid black;
+                margin-top: 100px;
+                margin-bottom: 100px;
+                margin-right: 150px;
+                margin-left: 80px;
+                margin: 100px 150px 100px 80px; /*margin top  -  right  -  bottom  -  left*/
+                margin: 100px 150px 70px; /*margin top  -  right and left  -  bottom */
+                margin: 100px 150px; /*margin top and bottom  -  right and left  */
+                margin: 100px; /*margin for all sides  */
+                background-color: lightblue;
+            }
+            .box2 {
+                border: 1px solid red;
+                width: 300px;                
+                margin: 50px auto;      /* width degeri vermeden olmuyor*/
+            }
+            h1 {
+                margin: 0 0 50px 0;
+            }
+
+            h2 {
+                margin: 20px 0 0 0;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo obcaecati officiis inventore assumenda aut ipsam illum dolores! Ex, aspernatur sunt!
+        </div>
+        <div class="box2">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <hr>
+
+        <p>In this example the h1 element has a bottom margin of 50px and the h2 element has a top margin of 20px. Then, the vertical margin between h1 and h2 should have been 70px (50px + 20px). However, due to margin collapse, the actual margin ends up being 50px.</p>
+
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+
+    </body>
+</html>
+
+
+<!--
+CSS has properties for specifying the margin for each side of an element:
+
+    margin-top
+    margin-right
+    margin-bottom
+    margin-left
+
+All the margin properties can have the following values:
+
+    auto        the browser calculates the margin
+    length      specifies a margin in px, pt, cm, etc.
+    %           specifies a margin in % of the width of the containing element
+    inherit     specifies that the margin should be inherited from the parent element
+
+Tip: Negative values are allowed.
+-->
+
+
+<!--
+The auto Value:
+----------------
+You can set the margin property to auto to horizontally center the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+-->
+
+
+<!--      ************* IMPORTANT ****************
+Margin Collapse:
+----------------
+Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+
+This does not happen on left and right margins! Only top and bottom margins!
+
+Look at the following example:
+-->
