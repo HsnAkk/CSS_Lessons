@@ -1,0 +1,250 @@
+<!--
+Property	                Description
+--------                    -------------
+background	                Sets all the background properties in one declaration
+
+background-color	        Sets the background color of an element
+background-image	        Sets the background image for an element
+background-position	        Sets the starting position of a background image
+background-size	            Specifies the size of the background image(s)
+background-repeat	        Sets how a background image will be repeated
+background-origin	        Specifies where the background image(s) is/are positioned
+background-clip	            Specifies the painting area of the background
+background-attachment	    Sets whether a background image is fixed or scrolls with the rest of the page
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Backgrounds</title>
+        <style>
+            body {
+                padding: 20px;
+            }
+            .box {
+                width: 300px;
+                height: 200px;
+                border: 1px solid black;
+                margin: 10px 0;
+                padding: 10px;
+            }
+            .green {
+                /* background-color: rgb(173, 255, 47);      NOTE BAK !!!!!!!!!! 
+                opacity: 0.3; */                            /* bu durumda text etkileniyor*/
+                background-color: rgb(173, 255, 47, 0.2); /* bu durumda text ETKILENMIYOR*/
+            }
+            .image {
+                background-image: url("bg.jpg");
+                /* background-repeat: repeat-x; */
+                /* background-repeat: repeat-y; */
+                background-repeat: no-repeat;
+                /* background-position: bottom right;
+                background-position: bottom left;
+                background-position: top centert;
+                background-position: left center; */
+                background-position: left center;
+                height: 800px;
+                /* background-attachment: fixed; */
+                background-attachment: scroll; /*default*/
+                /* background-size: contain; */
+                /* background-size: cover; */
+                /* background-size: 50% 70%; */
+                background-size: 100px 500px;
+            }
+            .gradient {
+                background-image: linear-gradient(rgb(0, 187, 255), rgb(68, 238, 122), rgb(228, 40, 215));
+                /* background-image: radial-gradient(rgb(0, 187, 255), rgb(68, 238, 122), rgb(228, 40, 215)); */
+            }
+            .origin {
+                border: 10px dashed rgb(114, 113, 113);
+                padding: 25px;
+                background-image: url('bg.jpg');
+                background-repeat: no-repeat;
+                /* background-origin: border-box;
+                background-origin: padding-box; */
+                background-origin: content-box;
+            }
+            .clip {
+                border: 10px dotted black;
+                padding: 15px;
+                background: lightblue;
+                /* background-clip: border-box;
+                background-clip: padding-box; */
+                background-clip: content-box;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="box green">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="box image">
+            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="box gradient"></div>
+        <div class="box origin"></div>
+        <div class="box clip"></div>
+        
+    </body>
+</html>
+
+
+<!--
+1. Background-color :
+------------------
+The background-color property sets the background color of an element.
+
+The background of an element is the total size of the element, including padding and border (but not the margin).
+
+NOTE: When using the opacity property to add transparency to the background of an element, 
+      all of its child elements inherit the same transparency. 
+      This can make the text inside a fully transparent element hard to read.
+
+      **** If you do not want to apply opacity to child elements, like in our example above, use RGBA color values. 
+-->
+
+
+<!--
+2. CSS background-image:
+---------------------
+The background-image property sets one or more background images for an element.
+
+By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally.
+
+Tip: The background of an element is the total size of the element, including padding and border (but not the margin).
+
+Tip: Always set a background-color to be used if the image is unavailable.
+
+
+Value	                        Description
+-------                         -------------
+url('URL')	                    The URL to the image. To specify more than one image, separate the URLs with a comma
+none	                        No background image will be displayed. This is default
+linear-gradient()	            Sets a linear gradient as the background image. Define at least two colors (top to bottom)
+radial-gradient()	            Sets a radial gradient as the background image. Define at least two colors (center to edges)
+repeating-linear-gradient()	    Repeats a linear gradient
+repeating-radial-gradient()	    Repeats a radial gradient
+-->
+
+
+<!--
+3. Background-position :
+---------------------
+The background-position property sets the starting position of a background image.
+
+TIP : By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally.
+
+Value	            Description
+-------             -----------
+left top            If you only specify one keyword, the other value will be "center"
+left center
+left bottom
+right top
+right center
+right bottom
+center top
+center center
+center bottom		
+
+x% y%	            The first value is the horizontal position and the second value is the vertical. 
+                    The top left corner is 0% 0%. The right bottom corner is 100% 100%. If you only specify one value, the other value will be 50%. . Default value is: 0% 0%	
+
+xpos ypos	        The first value is the horizontal position and the second value is the vertical. 
+                    The top left corner is 0 0. Units can be pixels (0px 0px) or any other CSS units. If you only specify one value, the other value will be 50%. You can mix % and positions
+-->
+
+
+<!--
+4. Background-size :
+--------------------
+The background-size property specifies the size of the background images.
+
+Value	    Description
+------      -----------
+auto	    Default value. The background image is displayed in its original size	
+length	    Sets the width and height of the background image. 
+            The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto". Read about length units	
+percentage	Sets the width and height of the background image in percent of the parent element. 
+            The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto"	
+cover	    Resize the background image to cover the entire container, even if it has to stretch the image or cut a little 
+            bit off one of the edges	
+contain	    Resize the background image to make sure the image is fully visible
+
+-->
+
+<!--
+5. Background-repeat:
+----------------------
+By default, the background-image property repeats an image both horizontally and vertically.
+
+TIP: The background image is placed according to the background-position property. If no background-position is specified, the image is always placed at the element's top left corner.
+
+Value	    Description
+------      ------------
+repeat	    The background image is repeated both vertically and horizontally.  
+            The last image will be clipped if it does not fit. This is default	
+repeat-x	The background image is repeated only horizontally	
+repeat-y	The background image is repeated only vertically	
+no-repeat	The background-image is not repeated. The image will only be shown once	
+space	    The background-image is repeated as much as possible without clipping. 
+            The first and last images are pinned to either side of the element, and whitespace is distributed evenly between the images	
+round	    The background-image is repeated and squished or stretched to fill the space (no gaps)
+-->
+
+<!--
+6. Background-origin:
+---------------------
+The background-origin property specifies the origin position (the background positioning area) of a background image.
+
+NOTE : This property has no effect if background-attachment is "fixed".
+
+Value	        Description
+-----------     ------------
+padding-box	    Default value. The background image starts from the upper left corner of the padding edge	
+border-box	    The background image starts from the upper left corner of the border	
+content-box	    The background image starts from the upper left corner of the content
+-->
+
+
+<!--
+7. Background-clip :
+--------------------
+The background-clip property defines how far the background (color or image) should extend within an element.
+
+Value	        Description
+-------         -------------
+border-box	    Default value. The background extends behind the border	
+padding-box	    The background extends to the inside edge of the border	
+content-box	    The background extends to the edge of the content box
+-->
+
+
+<!--
+8. Background-attachment:
+--------------------------
+The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)
+
+Value	Description
+-----   ------------
+scroll	The background image will scroll with the page. This is default
+fixed	The background image will not scroll with the page
+local	The background image will scroll with the element's contents
+-->
+
+
+
+<!--
+CSS background - Shorthand property:
+------------------------------------
+To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property.
+
+It does not matter if one of the property values is missing, as long as the other ones are in this order. 
+
+    background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+
+NOTE : If one of the properties in the shorthand declaration is the bg-size property, you must use a / (slash) to separate it from the bg-position property, e.g. background:url(smiley.gif) 10px 20px/50px 50px; will result in a background image, positioned 10 pixels from the left, 20 pixels from the top, and the size of the image will be 50 pixels wide and 50 pixels high.
+-->
