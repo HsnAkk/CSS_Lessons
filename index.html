@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Colors</title>
+        <style>
+            * {
+                padding: 10px;
+            }
+            h1 {
+                background-color: #ffd700;
+                color:rgb(70, 69, 69);
+            }
+            p {
+                color: hsl(120, 100%, 25%);
+                background-color: #ffd700;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="background-color:DodgerBlue;">Hello World</h1>
+
+        <p style="background-color:Tomato;">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+        </p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore enim natus cumque perferendis eos, quia repudiandae sint quam voluptas aspernatur!</p>
+        <h2 style="border:2px solid Tomato;">Hello World</h2>
+        <h2 style="border:2px solid #1e90ff;">Hello World</h2>
+        <h2 style="border:2px solid rgb(238, 130, 238);">Hello World</h2>
+    </body>
+</html>
+
+
+<!--
+Colors are specified using predefined color 
+    - names, 
+    - HEX, 
+    - RGB, or RGBA 
+    - HSL, HSLA 
+-->
+
+<!--
+Hexadecimal Colors:
+-------------------
+Hexadecimal color values are also supported in all browsers.
+
+A hexadecimal color is specified with: #RRGGBB.
+
+RR (red), GG (green) and BB (blue) are hexadecimal integers between 00 and FF specifying the intensity of the color.
+
+For example, #0000FF is displayed as blue, because the blue component is set to its highest value (FF) and the others are set to 00.
+-->
+
+
+
+<!--
+RGB Colors:
+-----------
+RGB color values are supported in all browsers.
+
+An RGB color value is specified with: rgb(red, green, blue).
+
+Each parameter (red, green, and blue) defines the intensity of the color as an integer between 0 and 255.
+
+For example, rgb(0, 0, 255) is rendered as blue, because the blue parameter is set to its highest value (255) and the others are set to 0.
+
+
+RGBA :
+------
+rgba(red, green, blue, alpha)
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+-->
+
+
+<!--
+HSL Colors:
+------------
+HSL color values are supported in IE9+, Firefox, Chrome, Safari, and in Opera 10+.
+
+HSL stands for hue, saturation, and lightness.
+
+HSL color values are specified with: hsl(hue, saturation, lightness).
+
+HSLA :
+------
+hsla(hue, saturation, lightness, alpha)
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+
+Hue: (renk)
+----
+Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, 240 is blue.
+
+Saturation: (doyum)
+-----------
+Saturation is a percentage value; 0% means a shade of gray and 100% is the full color.
+
+Lightness: (aciklik)
+----------
+Lightness is also a percentage; 0% is black, 100% is white.
+-->
